@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D7024E Flashcards</title>
+  <meta name="description" content="Flashcards for the D7024E Distributed and Mobile Computing Systems home exam: old exam true/false/depends statements and concept cards.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>D7024E flashcards</h1>
+        <p class="subtitle">Old exam statements (2018–2025) and concept cards from the lectures</p>
+      </div>
+      <nav class="tabs" role="tablist">
+        <button role="tab" id="tab-study" class="tab" aria-selected="true" data-view="study">Study</button>
+        <button role="tab" id="tab-browse" class="tab" aria-selected="false" data-view="browse">Browse</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="filters" aria-label="Filters">
+      <div class="filter-row">
+        <div class="segmented" role="radiogroup" aria-label="Deck">
+          <button data-deck="all" role="radio">All cards</button>
+          <button data-deck="exam" role="radio">Exam statements</button>
+          <button data-deck="concept" role="radio">Concepts</button>
+        </div>
+        <label class="select-label" id="year-wrap">Exam
+          <select id="year"></select>
+        </label>
+        <label class="check"><input type="checkbox" id="hide-known"> Hide known</label>
+        <label class="check"><input type="checkbox" id="shuffle"> Shuffle</label>
+        <button id="reshuffle" class="ghost" title="Shuffle again (S)">↻ Reshuffle</button>
+      </div>
+      <details class="topics-row" id="topics-box">
+        <summary id="topics-summary">Topics</summary>
+        <div id="topics" class="chips" aria-label="Topics"></div>
+      </details>
+      <p class="summary" id="summary"></p>
+    </section>
+
+    <section id="view-study" class="view">
+      <div class="progress" aria-hidden="true"><div class="bar" id="bar"></div></div>
+      <article class="card" id="card" aria-live="polite"></article>
+      <div class="nav-row">
+        <button id="prev" class="ghost" title="Previous (←)">← Prev</button>
+        <span class="position" id="position"></span>
+        <button id="next" class="ghost" title="Next (→)">Next →</button>
+      </div>
+      <p class="keys">Keys: <kbd>T</kbd> <kbd>F</kbd> <kbd>D</kbd> answer · <kbd>Space</kbd> reveal · <kbd>K</kbd> I know this · <kbd>L</kbd> still learning · <kbd>←</kbd> <kbd>→</kbd> navigate · <kbd>S</kbd> reshuffle</p>
+    </section>
+
+    <section id="view-browse" class="view" hidden>
+      <input type="search" id="search" placeholder="Search cards…" aria-label="Search cards">
+      <ol class="browse-list" id="browse-list"></ol>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>There is no official answer key. The answers and explanations are suggestions based on the lecture slides, and on the exam a well-argued "depends" or corner case can also earn the point.
+       Progress is saved in this browser only.</p>
+    <button id="reset" class="ghost danger">Reset progress</button>
+  </footer>
+
+  <script src="data/topics.js"></script>
+  <script src="data/exam-cards.js"></script>
+  <script src="data/concept-cards.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
