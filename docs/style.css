@@ -190,3 +190,26 @@ main { max-width: 920px; margin: 0 auto; padding: 1rem 16px 2rem; }
   .answers button { flex: 1 1 30%; min-width: 0; }
   .keys { display: none; }
 }
+
+/* ---------- study timer */
+.timer {
+  position: relative; display: flex; align-items: center; gap: .4rem;
+  background: var(--surface-2); border-radius: 999px; padding: .25rem .35rem .25rem .6rem; overflow: hidden;
+}
+.timer select { border: 0; background: transparent; padding: .2rem; color: var(--muted); }
+.timer-display { font-variant-numeric: tabular-nums; font-weight: 700; min-width: 3.2rem; text-align: center; }
+.timer.is-running .timer-display { color: var(--accent); }
+.timer-btn { padding: .25rem .75rem; border-radius: 999px; }
+.timer-track { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; }
+.timer-fill { height: 100%; width: 0; background: var(--accent); transition: width .25s linear; }
+
+.timer-done {
+  position: fixed; inset: 0; background: rgba(10, 14, 22, .55);
+  display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 10;
+}
+.timer-done-box {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 1.5rem; max-width: 380px; width: 100%; box-shadow: var(--shadow); text-align: center;
+}
+.timer-done-title { font-size: 1.4rem; font-weight: 700; margin: 0 0 .25rem; }
+.timer-done .actions { justify-content: center; margin-top: 1rem; }

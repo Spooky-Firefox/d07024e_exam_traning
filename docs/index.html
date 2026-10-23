@@ -14,6 +14,13 @@
         <h1>D7024E flashcards</h1>
         <p class="subtitle">Old exam statements (2018–2025) and concept cards from the lectures</p>
       </div>
+      <div class="timer" id="timer" role="group" aria-label="Study timer">
+        <select id="timer-min" aria-label="Session length"></select>
+        <span class="timer-display" id="timer-display" aria-live="off">20:00</span>
+        <button id="timer-start" class="timer-btn">Start</button>
+        <button id="timer-reset" class="ghost timer-btn" title="Reset timer">↺</button>
+        <div class="timer-track" aria-hidden="true"><div class="timer-fill" id="timer-fill"></div></div>
+      </div>
       <nav class="tabs" role="tablist">
         <button role="tab" id="tab-study" class="tab" aria-selected="true" data-view="study">Study</button>
         <button role="tab" id="tab-browse" class="tab" aria-selected="false" data-view="browse">Browse</button>
@@ -66,9 +73,21 @@
     <button id="reset" class="ghost danger">Reset progress</button>
   </footer>
 
+  <div class="timer-done" id="timer-done" role="alertdialog" aria-labelledby="timer-done-title" aria-describedby="timer-done-text" hidden>
+    <div class="timer-done-box">
+      <p class="timer-done-title" id="timer-done-title">⏰ Time's up!</p>
+      <p id="timer-done-text"></p>
+      <div class="actions">
+        <button id="timer-done-close" class="primary">Take a break</button>
+        <button id="timer-done-more" class="ghost">Another round</button>
+      </div>
+    </div>
+  </div>
+
   <script src="data/topics.js"></script>
   <script src="data/exam-cards.js"></script>
   <script src="data/concept-cards.js"></script>
   <script src="app.js"></script>
+  <script src="timer.js"></script>
 </body>
 </html>

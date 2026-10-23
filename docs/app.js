@@ -262,6 +262,7 @@
     var c = queue[pos];
     if (!c) return;
     setProg(c.id, { known: known });
+    document.dispatchEvent(new CustomEvent("d7024e:reviewed"));
     if (known && state.hideKnown) {
       queue.splice(pos, 1);
       if (pos >= queue.length) pos = Math.max(0, queue.length - 1);
